@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="card shadow p-4 col-md-8 mx-auto">
+    <h2>{{ 'Edit Content' if content else 'Add New Content' }}</h2>
+    <form method="POST">
+      <input type="text" name="title" placeholder="Title" class="form-control mb-2"
+             value="{{ content.title if content else '' }}" required>
+      <textarea name="body" class="form-control mb-2" rows="5" required>{{ content.body if content else '' }}</textarea>
+      <button class="btn btn-success">Save</button>
+      <a href="{{ url_for('admin') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+  </div>
+{% endblock %}

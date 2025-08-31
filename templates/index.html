@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1 class="mb-3">Website Contents</h1>
+  {% for c in contents %}
+    <div class="card shadow p-3 mb-3">
+      <h3>{{ c.title }}</h3>
+      <p>{{ c.body }}</p>
+    </div>
+  {% else %}
+    <p>No content available</p>
+  {% endfor %}
+{% endblock %}
